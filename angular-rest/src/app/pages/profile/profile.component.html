@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h1 class="display-4">Hello, {{currentUser.name}}!</h1>
+  <p class="lead">This is a simple fancy user management application that is created with Spring Boot, MysQL and Angular 9.</p>
+  <hr class="my-4">
+  <p>Your curretn role is <strong>{{currentUser.role}}</strong>. If you want to change it, you can use below button.</p>
+  <button class="btn btn-primary" (click)="changeRole()">Change Role</button>
+  <br>
+  <p>Or you can log-out directly from below link.</p>
+  <a class="btn btn-link btn-primary" (click)="logOut()">Log Out</a>
+</div>

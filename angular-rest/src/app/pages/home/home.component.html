@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="user-container" style="padding-top: 30px;">
+    <div class="alert alert-success" role="alert" *ngIf="infoMessage">
+      {{infoMessage}}
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+      {{errorMessage}}
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        All Users
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Role</th>
+            <th scope="col">Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of userList; index as ind">
+            <th scope="row">{{ind + 1}}</th>
+            <td>{{item.name}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.role}}</td>
+            <td>
+              <button class="btn btn-danger" (click)="delete(item, ind)" [disabled]="item.role === 'ROLE_ADMIN'">
+                <i class="fa fa-trash-o"></i>
+                Delete
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
